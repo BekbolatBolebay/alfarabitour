@@ -85,6 +85,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+  <!-- YouTube Iframe API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
   <style>
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
@@ -313,17 +316,22 @@
           <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white flex items-center gap-1.5">
             FARAB <span class="text-gold-400 font-light">TOUR</span>
           </span>
-          <span class="text-[9px] tracking-[0.25em] text-gold-300 uppercase font-medium">Рухани Ұмра Сапары</span>
+          <span class="text-[9px] tracking-[0.25em] text-gold-300 uppercase font-medium">UMRAH & HAJJ</span>
         </div>
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden xl:flex items-center gap-6 px-6 py-2 rounded-full glass-inner border border-gold-400/20 shadow-xl">
+      <nav class="hidden xl:flex items-center gap-4 2xl:gap-5 px-5 py-2 rounded-full glass-inner border border-gold-400/20 shadow-xl">
         <a href="#about" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Біз туралы</a>
-        <a href="#why-us" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Неліктен біз?</a>
-        <a href="#tours" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Ұмра турлары</a>
-        <a href="#timeline" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">7 Қадам</a>
-        <a href="#founder" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Жетекші</a>
+        <a href="#why-us" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">7 Кепілдік</a>
+        <a href="#tours" class="text-xs tracking-wider uppercase font-semibold text-gold-300 hover:text-white transition-colors flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
+          <span>Dostyk Тур</span>
+        </a>
+        <a href="#gifts" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Сыйлықтар</a>
+        <a href="#ziyarat" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Зиярат</a>
+        <a href="#parents" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Қамқорлық</a>
+        <a href="#founder" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Ұстаз</a>
         <a href="#faq" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">FAQ</a>
         <a href="#contact" class="text-xs tracking-wider uppercase font-semibold text-gray-200 hover:text-gold-300 transition-colors">Байланыс</a>
       </nav>
@@ -352,9 +360,12 @@
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden xl:hidden mt-3 max-w-md mx-auto rounded-2xl bg-[#021811]/95 backdrop-blur-2xl border border-gold-400/40 p-4 sm:p-5 shadow-2xl space-y-2.5 transition-all">
       <a href="#about" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Біз туралы</a>
-      <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Неліктен біз?</a>
-      <a href="#tours" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Ұмра турлары</a>
-      <a href="#timeline" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">7 Қадамды жол</a>
+      <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">7 Кепілдік</a>
+      <a href="#tours" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-bold text-gold-300 bg-gold-500/15 border border-gold-400/40 hover:bg-gold-500/25 transition-colors">🕋 Ұмра пакеті (Dostyk)</a>
+      <a href="#gifts" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Қажылар сыйлық жинағы</a>
+      <a href="#timeline" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">7 Қадамды сапар</a>
+      <a href="#ziyarat" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">10 Киелі орынға зиярат</a>
+      <a href="#parents" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Ата-аналарға қамқорлық</a>
       <a href="#founder" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Жетекші ұстаз</a>
       <a href="#faq" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Сұрақ-жауап (FAQ)</a>
       <a href="#contact" onclick="toggleMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-gray-200 hover:bg-gold-500/15 hover:text-gold-300 transition-colors">Байланыс</a>
@@ -387,18 +398,18 @@
         <div class="drift-1 mb-6 px-7 py-3 rounded-full bg-[#021811]/30 backdrop-blur-lg border border-gold-400/50 inline-flex items-center gap-3 shadow-2xl">
           <span class="text-gold-400 font-serif text-base sm:text-lg tracking-widest font-semibold">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
           <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
-          <span class="text-xs sm:text-sm uppercase tracking-widest text-gold-200 font-bold">Farab Tour 2026</span>
+          <span class="text-xs sm:text-sm uppercase tracking-widest text-gold-200 font-bold">Farab Tour</span>
         </div>
 
         <!-- Main Heading & Subtitle Box with Lighter Glass Backdrop -->
         <div class="max-w-5xl mx-auto space-y-6 bg-[#021811]/28 backdrop-blur-xl border border-gold-400/40 rounded-3xl p-6 sm:p-12 shadow-2xl">
-          <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.2] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-            Меккеге бару ғана емес, <br />
-            <span class="text-gold-gradient font-extrabold italic">жүрекпен баруға</span> дайындалу
+          <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.2] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] uppercase">
+            Ұмра сапарыңызды <br />
+            <span class="text-gold-gradient font-extrabold italic">бізге сеніп</span> тапсырыңыз!
           </h1>
 
-          <p class="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-100 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-            Шымкенттен тікелей ұшу, ихрамнан бастап оралуға дейінгі толық рухани жетекшілік және 5 жұлдызды жайлылық.
+          <p class="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-100 font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            Алматы, Шымкенттен тікелей рейс, ұшудан бастап оралғанға дейін — толық ұйымдастыру, рухани бағыт-бағдар және ең сапалы қызмет көрсету.
           </p>
 
           <!-- CTA Buttons Group -->
@@ -412,6 +423,20 @@
               <i data-lucide="message-circle" class="w-5 h-5 text-gold-400"></i>
               <span>Менеджермен кеңесу</span>
             </button>
+          </div>
+
+          <!-- Live Departure Countdown Ticker in Hero -->
+          <div class="pt-4 flex justify-center">
+            <a href="#tour-countdown" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#021811]/60 hover:bg-emerald-950/85 border border-gold-400/50 hover:border-gold-300 text-xs sm:text-sm text-gold-200 transition-all hover:scale-105 shadow-xl group">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+              </span>
+              <span>Келесі тікелей рейс: <strong class="text-white">10 Қазан</strong></span>
+              <span class="text-gold-400/50">•</span>
+              <span>Ұшуға қалды: <strong id="hero-countdown" class="text-gold-300 font-mono font-bold tracking-wider">24 күн 14:32:45</strong></span>
+              <i data-lucide="chevrons-down" class="w-4 h-4 text-gold-400 group-hover:translate-y-0.5 transition-transform"></i>
+            </a>
           </div>
         </div>
 
@@ -493,7 +518,7 @@
               <span class="text-gold-400 text-2xl sm:text-4xl ml-1">топ</span>
             </div>
             <div class="text-base sm:text-xl font-bold text-white mb-1.5">Ұйымдастырылды</div>
-            <p class="text-xs sm:text-sm text-slate-200 font-medium">Әр топпен жеке ұстаз</p>
+            <p class="text-xs sm:text-sm text-slate-200 font-medium">Сәтті өткен рухани сапарлар</p>
           </div>
 
           <!-- Stat 3 -->
@@ -511,11 +536,13 @@
           <div class="p-6 sm:p-8 rounded-3xl glass-emerald border border-gold-400/40 text-center relative overflow-hidden group hover:border-gold-400 transition-all duration-300 shadow-2xl hover:-translate-y-1">
             <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-gold-500/10 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
             <div class="text-4xl sm:text-6xl md:text-7xl font-serif font-extrabold text-gold-gradient mb-2 flex items-center justify-center">
-              <span class="counter" data-target="6">6</span>
-              <span class="text-gold-400 text-2xl sm:text-4xl ml-1">жыл</span>
+              <span class="counter" data-target="100">100</span>
+              <span class="text-gold-400 text-2xl sm:text-4xl ml-1">%</span>
             </div>
-            <div class="text-base sm:text-xl font-bold text-white mb-1.5">Тәжірибе</div>
-            <p class="text-xs sm:text-sm text-slate-200 font-medium">Сауд Арабиясындағы серіктестер</p>
+            <div class="text-sm sm:text-lg md:text-xl font-bold text-white mb-1.5 leading-tight">
+              Тәжірибелі <span class="whitespace-nowrap">гид-ұстаздар</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-200 font-medium">Әр топқа білікті дінтанушы жетекші</p>
           </div>
 
         </div>
@@ -581,83 +608,147 @@
           </div>
         </div>
 
-        <!-- 6 Floating Grid Cards: Why Choose Farab Tour -->
+        <!-- 7 Floating Grid Cards: Why Choose Farab Tour -->
         <div id="why-us" class="space-y-12 pt-8">
           <div class="text-center max-w-3xl mx-auto">
             <span class="px-5 py-2 rounded-full glass-gold text-gold-300 text-xs sm:text-sm font-bold tracking-widest uppercase inline-block mb-3">
               Неліктен біз?
             </span>
             <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
-              Сіздің алаңсыз ғибадатыңызға <span class="text-gold-gradient">6 кепілдік</span>
+              Сіздің алаңсыз ғибадатыңызға <span class="text-gold-gradient">7 кепілдік</span>
             </h2>
+            <p class="text-slate-200 text-sm sm:text-base font-medium mt-2">
+              Ұшудан бастап аман-есен оралғанға дейінгі толық ұйымдастыру мен жоғары жайлылық
+            </p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Card 1 -->
-            <div class="p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                <i data-lucide="plane" class="w-7 h-7"></i>
+            <!-- Кепілдік 1: Тікелей рейс -->
+            <div class="p-7 sm:p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform shadow-md">
+                    <i data-lucide="plane-takeoff" class="w-7 h-7"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-extrabold uppercase border border-gold-400/30">1-кепілдік</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Тікелей Рейс</h3>
+                <p class="text-base text-slate-100 font-normal leading-relaxed">
+                  Алматы, Шымкенттен тікелей рейс. <strong>20 кг жүк</strong> және <strong>7 кг қол жүгі</strong> толық қарастырылған.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Шымкенттен Тікелей Ұшу</h3>
-              <p class="text-base text-slate-100 font-normal leading-relaxed">
-                Ауысып отырусыз, артық шаршаусыз Шымкент әуежайынан Мәдина немесе Жидда қаласына тікелей ыңғайлы рейс.
-              </p>
             </div>
 
-            <!-- Card 2 -->
-            <div class="p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                <i data-lucide="building-2" class="w-7 h-7"></i>
+            <!-- Кепілдік 2: 1 жылдық виза -->
+            <div class="p-7 sm:p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform shadow-md">
+                    <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-extrabold uppercase border border-gold-400/30">2-кепілдік</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">1 Жылдық Виза</h3>
+                <p class="text-base text-slate-100 font-normal leading-relaxed">
+                  Сауд Арабиясының 1 жылдық ресми туристік/ұмра визасы мен толық медициналық сақтандыруы ресімделеді.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Харамға Жақын 5★ Қонақүйлер</h3>
-              <p class="text-base text-slate-100 font-normal leading-relaxed">
-                Мекке мен Мәдинадағы әл-Харам және Пайғамбар мешітіне жаяу 3-7 минуттық жайлы, премиум қонақүйлер.
-              </p>
             </div>
 
-            <!-- Card 3 -->
-            <div class="p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                <i data-lucide="graduation-cap" class="w-7 h-7"></i>
+            <!-- Кепілдік 3: Әл-Харамға жақын қонақ үйлер -->
+            <div class="p-7 sm:p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform shadow-md">
+                    <i data-lucide="hotel" class="w-7 h-7"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-extrabold uppercase border border-gold-400/30">3-кепілдік</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Ал-Харамға Жақын Қонақ Үйлер</h3>
+                <p class="text-base text-slate-100 font-normal leading-relaxed">
+                  Ал-Харам мешіті мен Пайғамбар мешітіне жаяу 3-7 минуттық арақашықтықтағы жайлы қонақ үйлер.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Кәсіби Ұстаздар Топпен Бірге</h3>
-              <p class="text-base text-slate-100 font-normal leading-relaxed">
-                Әрбір амал (Ихрам, Тауаф, Сағи) шариғатқа сай орындалуы үшін білікті ұстаз әрдайым жаныңызда болады.
-              </p>
             </div>
 
-            <!-- Card 4 -->
-            <div class="p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                <i data-lucide="utensils" class="w-7 h-7"></i>
+            <!-- Кепілдік 4: Екі мезгіл швед үстелінен тамақ -->
+            <div class="p-7 sm:p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform shadow-md">
+                    <i data-lucide="utensils-crossed" class="w-7 h-7"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-extrabold uppercase border border-gold-400/30">4-кепілдік</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Екі Мезгіл Швед Үстелі</h3>
+                <p class="text-base text-slate-100 font-normal leading-relaxed">
+                  Екі мезгіл швед үстелінен тамақ: қажыларымыздың талғамына сай дайындалған дәмді халал ас мәзірі.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Дәмді Ұлттық & Халал Тағамдар</h3>
-              <p class="text-base text-slate-100 font-normal leading-relaxed">
-                Қазақ қажыларының талғамына сай дайындалған күніне 3-4 мезгіл швед үстелі және халал мәзір.
-              </p>
             </div>
 
-            <!-- Card 5 -->
-            <div class="p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                <i data-lucide="bus" class="w-7 h-7"></i>
+            <!-- Кепілдік 5: Білікті ұстаз-гид қызметі -->
+            <div class="p-7 sm:p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform shadow-md">
+                    <i data-lucide="user-check" class="w-7 h-7"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-extrabold uppercase border border-gold-400/30">5-кепілдік</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Білікті Ұстаз-Гид Қызметі</h3>
+                <p class="text-base text-slate-100 font-normal leading-relaxed">
+                  Білікті ұстаз-гид қызметі: әрбір амалды шариғат пен сүннетке сай үйретіп, рухани сүйемелдейді.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Люкс Трансфер & Зиярат</h3>
-              <p class="text-base text-slate-100 font-normal leading-relaxed">
-                Сауд Арабиясында кондиционерлі VIP автобустармен Мекке, Мәдина, Ұхыд, Құба мешітіне экскурсиялар.
-              </p>
             </div>
 
-            <!-- Card 6 -->
-            <div class="p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                <i data-lucide="gift" class="w-7 h-7"></i>
+            <!-- Кепілдік 6: Ыңғайлы трансфер & Экскурсиялар -->
+            <div class="p-7 sm:p-8 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 shadow-xl group hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform shadow-md">
+                    <i data-lucide="bus-front" class="w-7 h-7"></i>
+                  </div>
+                  <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-extrabold uppercase border border-gold-400/30">6-кепілдік</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Ыңғайлы Трансфер & Экскурсиялар</h3>
+                <p class="text-base text-slate-100 font-normal leading-relaxed">
+                  Ыңғайлы, салқындатқышы бар люкс автобустармен қатынау және тарихи киелі орындарға толық экскурсиялар.
+                </p>
               </div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2.5 font-serif">Farab Tour Сыйы & Зәмзәм</h3>
-              <p class="text-base text-slate-100 font-normal leading-relaxed">
-                Әр қажыға ихрам матасы, сөмке, қажылық кітапшасы, бейджик және 5 литр таза Зәмзәм суы сыйға беріледі.
-              </p>
+            </div>
+
+            <!-- Кепілдік 7: Farab-tour компания сыйлығы -->
+            <div class="md:col-span-2 lg:col-span-3 p-8 sm:p-10 rounded-3xl glass-dostyk border-2 border-gold-400 shadow-2xl relative overflow-hidden hover:scale-[1.01] transition-all">
+              <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="flex items-start sm:items-center gap-5">
+                  <div class="w-16 h-16 rounded-2xl bg-gold-500/25 border border-gold-400/60 flex items-center justify-center text-gold-300 shrink-0 shadow-lg shadow-gold-500/20">
+                    <i data-lucide="gift" class="w-8 h-8"></i>
+                  </div>
+                  <div class="space-y-1">
+                    <div class="flex items-center gap-3">
+                      <span class="px-3.5 py-1 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-emerald-950 text-xs font-black uppercase tracking-wider shadow-md">
+                        7-КЕПІЛДІК • КОМПАНИЯ СЫЙЛЫҒЫ
+                      </span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white font-serif">
+                      Farab-Tour Компания Сыйлығы
+                    </h3>
+                    <p class="text-base text-slate-100 font-medium">
+                      Әрбір қажыға: <strong class="text-gold-300">Farab collection формасы</strong>, анықтамалық кітапша, бейджик және <strong class="text-gold-300">5 литр замзам</strong> суы тегін табысталады.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2.5 shrink-0 w-full lg:w-auto">
+                  <span class="px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-gold-400/40 text-gold-200 text-xs font-bold">✓ Farab collection формасы</span>
+                  <span class="px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-gold-400/40 text-gold-200 text-xs font-bold">✓ Анықтамалық кітапша</span>
+                  <span class="px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-gold-400/40 text-gold-200 text-xs font-bold">✓ Бейджик</span>
+                  <span class="px-3.5 py-2 rounded-xl bg-emerald-950/80 border border-gold-400/40 text-gold-200 text-xs font-bold">✓ 5 литр замзам</span>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -701,11 +792,14 @@
     <div id="cloud-corridor" class="relative pointer-events-none" style="height:110vh;"></div>
 
 
+
+
+
     <!-- -----------------------------------------------------------------------
-         SECTION 5: TOURS & DOSTYK PACKAGE CARD & 9 INCLUDED SERVICES GRID
+         SECTION 5: 3 COMPREHENSIVE TOURS COMPARISON & 9 INCLUDED SERVICES GRID
          ----------------------------------------------------------------------- -->
-    <section id="tours" class="pt-14 pb-2 px-4 md:px-8 relative">
-      <div class="max-w-7xl mx-auto space-y-8">
+    <section id="tours" class="pt-6 pb-2 px-4 md:px-8 relative">
+      <div class="max-w-7xl mx-auto space-y-12">
         
         <div class="text-center max-w-3xl mx-auto space-y-3">
           <span class="px-4 py-1.5 rounded-full glass-gold text-gold-300 text-xs sm:text-sm font-bold tracking-widest uppercase inline-block">
@@ -714,7 +808,68 @@
           <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
             Ұмра сапарының <span class="text-gold-gradient">бағдарламасы</span>
           </h2>
-          <p class="text-slate-100 text-base sm:text-lg font-medium">Барлық қызметтер мен жайлылық бір пакетте қарастырылған</p>
+          <p class="text-slate-100 text-base sm:text-lg font-medium">
+            Барлық қызметтер мен ең жоғары жайлылық бір толық пакетте қарастырылған
+          </p>
+        </div>
+
+        <!-- UPCOMING TOUR DEPARTURE COUNTDOWN BANNER -->
+        <div id="tour-countdown" class="max-w-5xl mx-auto p-6 sm:p-9 rounded-3xl glass-dostyk border-2 border-gold-400 shadow-2xl relative overflow-hidden text-center space-y-6">
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/20 border border-red-400/40 text-red-300 text-xs sm:text-sm font-black uppercase tracking-wider">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+              Тіркелу жүріп жатыр • Орын саны шектеулі
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs sm:text-sm font-bold">
+              <i data-lucide="plane-takeoff" class="w-4 h-4 text-gold-400"></i>
+              <span>Келесі рейс: 10 Қазан 2026 ж.</span>
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white">
+              Келесі Ұмра Сапарының Басталуына:
+            </h3>
+            <p class="text-sm sm:text-base text-slate-200 font-medium max-w-2xl mx-auto">
+              Шымкент және Алматы қалаларынан тікелей рейс. Топта бар-жоғы <strong class="text-gold-300 font-bold">7 бос орын</strong> қалды.
+            </p>
+          </div>
+
+          <!-- Countdown Digits Grid -->
+          <div class="grid grid-cols-4 gap-2.5 sm:gap-4 max-w-xl mx-auto">
+            <!-- Days -->
+            <div class="p-3 sm:p-5 rounded-2xl bg-emerald-950/85 border border-gold-400/40 shadow-inner text-center">
+              <div id="countdown-days" class="font-serif text-3xl sm:text-5xl font-black text-gold-gradient">24</div>
+              <div class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider font-bold mt-1">Күн</div>
+            </div>
+            <!-- Hours -->
+            <div class="p-3 sm:p-5 rounded-2xl bg-emerald-950/85 border border-gold-400/40 shadow-inner text-center">
+              <div id="countdown-hours" class="font-serif text-3xl sm:text-5xl font-black text-gold-gradient">14</div>
+              <div class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider font-bold mt-1">Сағат</div>
+            </div>
+            <!-- Minutes -->
+            <div class="p-3 sm:p-5 rounded-2xl bg-emerald-950/85 border border-gold-400/40 shadow-inner text-center">
+              <div id="countdown-minutes" class="font-serif text-3xl sm:text-5xl font-black text-gold-gradient">32</div>
+              <div class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider font-bold mt-1">Минут</div>
+            </div>
+            <!-- Seconds -->
+            <div class="p-3 sm:p-5 rounded-2xl bg-emerald-950/85 border border-gold-400/40 shadow-inner text-center">
+              <div id="countdown-seconds" class="font-serif text-3xl sm:text-5xl font-black text-gold-300">45</div>
+              <div class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider font-bold mt-1">Секунд</div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+            <button onclick="openConsultationModal('10 Қазан турына жазылу', '10 Қазан күнгі тікелей рейс Ұмра турына орын брондау')" class="shimmer-btn w-full sm:w-auto py-3.5 px-8 rounded-2xl bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-gold-500/25 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Орын алып үлгеру</span>
+            </button>
+            <a href="https://wa.me/77085718685?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5!%2010%20%D2%9A%D0%B0%D0%B7%D0%B0%D0%BD%D0%B4%D0%B0%D2%93%D1%8B%20%D2%B0%D0%BC%D1%80%D0%B0%20%D1%82%D1%83%D1%80%D1%8B%D0%BD%D0%B0%20%D0%BE%D1%80%D1%8B%D0%BD%20%D0%B1%D1%80%D0%BE%D0%BD%D0%B4%D0%B0%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto py-3.5 px-6 rounded-2xl bg-[#25D366]/20 border border-[#25D366]/50 hover:bg-[#25D366]/30 text-[#25D366] hover:text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp арқылы жазылу</span>
+            </a>
+          </div>
         </div>
 
         <!-- DOSTYK PACKAGE HERO CARD (Translucent Glassmorphism) -->
@@ -722,8 +877,8 @@
           
           <!-- Top Badge Ribbon -->
           <div class="sm:absolute sm:top-8 sm:right-8 mb-4 sm:mb-0 inline-block">
-            <span class="px-4 py-1.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-emerald-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-lg">
-              ХИТ ПАКЕТ • ШЫМКЕНТ
+            <span class="px-5 py-2 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-emerald-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-gold-500/30">
+              ★ ХИТ ПАКЕТ • ШЫМКЕНТ / АЛМАТЫ ★
             </span>
           </div>
 
@@ -737,7 +892,7 @@
                   10.10.2026 – 21.10.2026
                 </span>
                 <span class="text-gray-400 hidden sm:inline">•</span>
-                <span class="text-slate-100 text-base font-medium">Шымкенттен тікелей ұшу</span>
+                <span class="text-slate-100 text-base font-medium">Шымкент және Алматыдан тікелей рейс</span>
               </p>
             </div>
 
@@ -757,11 +912,17 @@
               </div>
               <div class="p-4 rounded-2xl glass-inner text-center float-antigravity-2">
                 <i data-lucide="user-check" class="w-6 h-6 text-gold-400 mx-auto mb-2"></i>
-                <span class="text-sm sm:text-base text-slate-100 font-bold block">Жеке ұстаз</span>
+                <span class="text-sm sm:text-base text-slate-100 font-bold block">Әлфараби ұстаз</span>
               </div>
             </div>
 
             <div class="h-px bg-gold-400/25 my-5"></div>
+
+            <!-- Distance & Hotel highlight -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-gold-500/20 border border-gold-400/40 text-gold-200 text-sm font-bold">
+              <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 shrink-0"></i>
+              <span>Қонақүйлер: Әл-Харам мен Пайғамбар мешітіне жақын (3-4 минут жаяу)</span>
+            </div>
 
             <!-- Features Quick List -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg text-slate-100 font-medium">
@@ -771,15 +932,23 @@
               </div>
               <div class="flex items-center gap-3">
                 <i data-lucide="check-circle" class="w-5 h-5 text-gold-400 shrink-0"></i>
-                <span>Мекке қаласында 7 күн (әл-Харамға жақын)</span>
+                <span>Мекке қаласында 7 күн (әл-Харамға жақын 3-4 мин)</span>
               </div>
               <div class="flex items-center gap-3">
                 <i data-lucide="check-circle" class="w-5 h-5 text-gold-400 shrink-0"></i>
-                <span>Сауд Арабиясының ресми туристік визасы</span>
+                <span>Сауд Арабиясының ресми визасы + сақтандыру</span>
               </div>
               <div class="flex items-center gap-3">
                 <i data-lucide="check-circle" class="w-5 h-5 text-gold-400 shrink-0"></i>
                 <span>Күніне 3-4 мезгіл толық тамақтану (швед үстелі)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-gold-400 shrink-0"></i>
+                <span>10 киелі орынға толық тарихи зиярат</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-gold-400 shrink-0"></i>
+                <span>Farab collection формасы + 5L Замзам сыйы</span>
               </div>
             </div>
 
@@ -800,9 +969,9 @@
                 </button>
 
                 <!-- 2. WhatsApp Booking Button via Lead Capture -->
-                <button onclick="openConsultationModal('Dostyk Package брондау', '10.10.2026 – 21.10.2026 аралығындағы Dostyk Package турын брондау')" class="shimmer-btn px-7 py-3.5 rounded-full bg-gradient-to-r from-[#25D366] via-emerald-500 to-[#128C7E] text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2">
+                <button onclick="openConsultationModal('Dostyk Package брондау ($1,250)', '10.10.2026 – 21.10.2026 аралығындағы Dostyk Package турын брондау ($1,250)')" class="shimmer-btn px-7 py-3.5 rounded-full bg-gradient-to-r from-[#25D366] via-emerald-500 to-[#128C7E] text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2">
                   <i data-lucide="message-square" class="w-4 h-4"></i>
-                  <span>Брондау (WhatsApp)</span>
+                  <span>Орын брондау ($1,250)</span>
                 </button>
               </div>
             </div>
@@ -884,23 +1053,23 @@
               <p class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">Швед үстелі және халал қазақ/шығыс асханасы</p>
             </div>
 
-            <!-- 8. Baggage -->
-            <div class="p-5 sm:p-6 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 text-center hover:-translate-y-1 float-antigravity-2 shadow-xl">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/25 border border-gold-400/50 flex items-center justify-center text-gold-300 mx-auto mb-3 shadow-md">
-                <i data-lucide="briefcase" class="w-7 h-7"></i>
+              <!-- 8. Baggage -->
+              <div class="p-5 sm:p-6 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 text-center hover:-translate-y-1 float-antigravity-2 shadow-xl">
+                <div class="w-14 h-14 rounded-2xl bg-gold-500/25 border border-gold-400/50 flex items-center justify-center text-gold-300 mx-auto mb-3 shadow-md">
+                  <i data-lucide="briefcase" class="w-7 h-7"></i>
+                </div>
+                <h4 class="font-bold text-base sm:text-lg md:text-xl text-gold-200 mb-2 font-serif">20 кг + 7 кг Жүк</h4>
+                <p class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">20 кг жүк және 7 кг қол жүгі толық қамтылған</p>
               </div>
-              <h4 class="font-bold text-base sm:text-lg md:text-xl text-gold-200 mb-2 font-serif">2x23 кг Багаж</h4>
-              <p class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">Сыйлықтар мен Зәмзәмді емін-еркін алып келуге</p>
-            </div>
 
-            <!-- 9. Extra & Gifts (Spans 2 cols on mobile for balanced grid) -->
-            <div class="col-span-2 sm:col-span-1 p-5 sm:p-6 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 text-center hover:-translate-y-1 float-antigravity-3 shadow-xl">
-              <div class="w-14 h-14 rounded-2xl bg-gold-500/25 border border-gold-400/50 flex items-center justify-center text-gold-300 mx-auto mb-3 shadow-md">
-                <i data-lucide="gift" class="w-7 h-7"></i>
+              <!-- 9. Extra & Gifts (Spans 2 cols on mobile for balanced grid) -->
+              <div class="col-span-2 sm:col-span-1 p-5 sm:p-6 rounded-3xl glass-emerald hover:border-gold-400 transition-all duration-300 text-center hover:-translate-y-1 float-antigravity-3 shadow-xl">
+                <div class="w-14 h-14 rounded-2xl bg-gold-500/25 border border-gold-400/50 flex items-center justify-center text-gold-300 mx-auto mb-3 shadow-md">
+                  <i data-lucide="gift" class="w-7 h-7"></i>
+                </div>
+                <h4 class="font-bold text-base sm:text-lg md:text-xl text-gold-200 mb-2 font-serif">Farab Tour Сыйлығы</h4>
+                <p class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">Farab collection формасы, кітапша, бейджик, 5L замзам</p>
               </div>
-              <h4 class="font-bold text-base sm:text-lg md:text-xl text-gold-200 mb-2 font-serif">Қосымша Қызметтер</h4>
-              <p class="text-sm sm:text-base text-slate-100 leading-relaxed font-medium">Ихрам, сөмке, қажылық кітапшасы, 5L Зәмзәм суы</p>
-            </div>
 
           </div>
 
@@ -911,6 +1080,84 @@
               <i data-lucide="chevrons-down" class="w-4 h-4 text-gold-400/70 animate-bounce"></i>
               <span class="w-12 h-px bg-gradient-to-l from-transparent to-gold-400/40"></span>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 5.5: PILGRIM GIFT KIT (ҚАЖЫЛАР СЫЙЛЫҚ ЖИНАҒЫ)
+         ----------------------------------------------------------------------- -->
+    <section id="gifts" class="py-16 px-4 md:px-8 relative">
+      <div class="max-w-6xl mx-auto space-y-10">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <span class="px-4 py-1.5 rounded-full glass-gold text-gold-300 text-xs sm:text-sm font-bold tracking-widest uppercase inline-block">
+            Қосымша шығынсыз
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+            Қажыларымызға берілетін <br /><span class="text-gold-gradient">фирмалық сыйлық жинағы</span>
+          </h2>
+          <p class="text-slate-100 text-base sm:text-lg font-medium">
+            Сапарға қажеттінің барлығы алдын ала арнайы жол сөмкесіне салынып тегін табысталады
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <!-- 1. Zamzam -->
+          <div class="p-6 rounded-3xl glass-emerald border border-gold-400/35 hover:border-gold-400 transition-all duration-300 text-center space-y-3 hover:-translate-y-1 shadow-xl">
+            <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+              <i data-lucide="droplet" class="w-7 h-7"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white">5 литр замзам суы</h4>
+            <p class="text-sm text-slate-200 leading-relaxed font-normal">Мекке қаласынан арнайы пломбаланған түпнұсқа 5 литр замзам суы әуежайда тікелей қолыңызға табысталады.</p>
+          </div>
+
+          <!-- 2. Farab collection формасы -->
+          <div class="p-6 rounded-3xl glass-emerald border border-gold-400/35 hover:border-gold-400 transition-all duration-300 text-center space-y-3 hover:-translate-y-1 shadow-xl">
+            <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+              <i data-lucide="shirt" class="w-7 h-7"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white">Farab collection формасы</h4>
+            <p class="text-sm text-slate-200 leading-relaxed font-normal">Ер кісілер үшін сапалы ихрам матасы, әйелдер үшін арнайы фирмалық жилет – Farab collection эксклюзивті формасы.</p>
+          </div>
+
+          <!-- 3. Travel Bag -->
+          <div class="p-6 rounded-3xl glass-emerald border border-gold-400/35 hover:border-gold-400 transition-all duration-300 text-center space-y-3 hover:-translate-y-1 shadow-xl">
+            <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+              <i data-lucide="briefcase" class="w-7 h-7"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white">Farab Tour жол сөмкесі</h4>
+            <p class="text-sm text-slate-200 leading-relaxed font-normal">Төзімді, су өткізбейтін материалдан жасалған құжаттар мен жеке заттарға арналған ыңғайлы сөмке.</p>
+          </div>
+
+          <!-- 4. Badge -->
+          <div class="p-6 rounded-3xl glass-emerald border border-gold-400/35 hover:border-gold-400 transition-all duration-300 text-center space-y-3 hover:-translate-y-1 shadow-xl">
+            <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+              <i data-lucide="badge-check" class="w-7 h-7"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white">Бейджик</h4>
+            <p class="text-sm text-slate-200 leading-relaxed font-normal">Қажының аты-жөні, қонақүй атауы, жетекші ұстаз бен жедел желі нөмірлері жазылған фирмалық бейджик.</p>
+          </div>
+
+          <!-- 5. Guidebook & Duas -->
+          <div class="p-6 rounded-3xl glass-emerald border border-gold-400/35 hover:border-gold-400 transition-all duration-300 text-center space-y-3 hover:-translate-y-1 shadow-xl">
+            <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+              <i data-lucide="book-open" class="w-7 h-7"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white">Анықтамалық кітапша</h4>
+            <p class="text-sm text-slate-200 leading-relaxed font-normal">Ұмраның парыздары, тәуап пен сағи дұғаларының қазақша оқылуы мен мағынасы толық жазылған бағыттаушы кітапша.</p>
+          </div>
+
+          <!-- 6. SIM Card -->
+          <div class="p-6 rounded-3xl glass-emerald border border-gold-400/35 hover:border-gold-400 transition-all duration-300 text-center space-y-3 hover:-translate-y-1 shadow-xl">
+            <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+              <i data-lucide="smartphone" class="w-7 h-7"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white">Сауд Арабиясы 5G SIM-картасы</h4>
+            <p class="text-sm text-slate-200 leading-relaxed font-normal">Елдегі туған-туыстармен, бала-шағамен әрдайым байланыста болып, бейнеқоңырау шалуға арналған интернет пакеті.</p>
           </div>
         </div>
 
@@ -1009,6 +1256,240 @@
               </button>
             </div>
 
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 6.5: 10 SACRED ZIYARAT SITES (МЕККЕ МЕН МӘДИНА ЗИЯРАТТАРЫ)
+         ----------------------------------------------------------------------- -->
+    <section id="ziyarat" class="py-20 px-4 md:px-8 relative">
+      <div class="max-w-6xl mx-auto space-y-10">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <span class="px-4 py-1.5 rounded-full glass-gold text-gold-300 text-xs sm:text-sm font-bold tracking-widest uppercase inline-block">
+            Тарихи-рухани сапар
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+            Мекке мен Мәдинадағы <br /><span class="text-gold-gradient">10 киелі орынға зиярат</span>
+          </h2>
+          <p class="text-slate-100 text-base sm:text-lg font-medium">
+            Әрбір зиярат білікті дінтанушы ұстаз Әлфараби Сағымбекұлының танымдық дәрістерімен терең түсіндіріледі
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- MADINAH COLUMN (5 Sites) -->
+          <div class="rounded-3xl glass-emerald p-6 sm:p-8 border border-gold-400/40 space-y-5 shadow-xl">
+            <div class="flex items-center gap-3 pb-3 border-b border-gold-400/25">
+              <div class="w-12 h-12 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 shadow-md">
+                <i data-lucide="landmark" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-white">Мәдина қаласы</h3>
+                <p class="text-xs text-gold-300 font-semibold uppercase tracking-wider">5 Тарихи киелі мекен</p>
+              </div>
+            </div>
+
+            <div class="space-y-3.5">
+              <!-- Site 1 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Құба мешіті</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Ислам тарихындағы ең алғашқы мешіт. Мұнда 2 рәкәғат намаз оқу 1 толық Ұмра сауабына тең келеді.</p>
+                </div>
+              </div>
+
+              <!-- Site 2 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Ұхұд шайқасы мен 70 шейіт қорымы</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Хамза (р.а.) бастаған сахабалар рухына тағзым ету және Ұхұд тауындағы тарихи ерлік сабақтары.</p>
+                </div>
+              </div>
+
+              <!-- Site 3 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Қос құбыла мешіті (Әл-Қыблатейн)</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Намаз құбыласының Құдыстан (Иерусалим) қасиетті Қағбаға тікелей бұрылған тарихи оқиға орыны.</p>
+                </div>
+              </div>
+
+              <!-- Site 4 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">4</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Құран Кәрім басып шығару кешені</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Жылына миллиондаған қасиетті Құран басылып әлемнің түкпір-түкпіріне таратылатын алып кешен.</p>
+                </div>
+              </div>
+
+              <!-- Site 5 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">5</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Құрма бағы</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Қасиетті Әжуа құрмасының өсу процесімен танысып, нағыз түпнұсқа сапалы құрма таңдау мүмкіндігі.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAKKAH COLUMN (5 Sites) -->
+          <div class="rounded-3xl glass-emerald p-6 sm:p-8 border border-gold-400/40 space-y-5 shadow-xl">
+            <div class="flex items-center gap-3 pb-3 border-b border-gold-400/25">
+              <div class="w-12 h-12 rounded-2xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 shadow-md">
+                <i data-lucide="mountain" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-2xl font-bold text-white">Мекке қаласы</h3>
+                <p class="text-xs text-gold-300 font-semibold uppercase tracking-wider">5 Қасиетті ұлық орын</p>
+              </div>
+            </div>
+
+            <div class="space-y-3.5">
+              <!-- Site 1 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Хира үңгірі (Нұр тауы)</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Пайғамбарымызға (с.ғ.с.) Жебірейіл (ғ.с.) періште арқылы тұңғыш «Иқра» (Оқы!) аяты түскен мекен.</p>
+                </div>
+              </div>
+
+              <!-- Site 2 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Сәуір үңгірі</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Һижрат кезінде Пайғамбарымыз (с.ғ.с.) бен Әбу Бәкірдің (р.а.) дұшпаннан үш күн бойы паналаған жері.</p>
+                </div>
+              </div>
+
+              <!-- Site 3 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Арафат тауы және Рахма төбесі</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Қажылықтың негізгі парызы өткізілетін, барлық дұғалар мен тәубелер қабыл болатын ұлық мекен.</p>
+                </div>
+              </div>
+
+              <!-- Site 4 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">4</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Мина жазығы және Муздалифа даласы</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Миллиондаған ақ шатырлар қалашығы, қажылардың құлшылық пен дұғаға арнайтын қасиетті жазығы.</p>
+                </div>
+              </div>
+
+              <!-- Site 5 -->
+              <div class="p-4 rounded-2xl bg-emerald-950/70 border border-gold-400/20 flex items-start gap-3.5 hover:border-gold-400/60 transition-all">
+                <span class="w-7 h-7 rounded-lg bg-gold-400 text-emerald-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">5</span>
+                <div>
+                  <h4 class="font-bold text-white text-base">Жамарат кешені</h4>
+                  <p class="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">Ибраһим (ғ.с.) пайғамбардың сүннетімен шайтанға тас ату рәсімі орындалатын тарихи орын.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center pt-2">
+          <button onclick="openConsultationModal('Зиярат бағдарламасы', 'Мекке мен Мәдинадағы 10 киелі орынға зиярат бағдарламасы бойынша толық мәлімет алу')" class="shimmer-btn inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-gold-500/20 hover:scale-105 active:scale-95 transition-all">
+            <i data-lucide="map" class="w-4 h-4"></i>
+            <span>Зиярат бағдарламасымен толық танысу</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 6.8: SENIOR & PARENT CARE (АТА-АНАЛАРҒА ЕРЕКШЕ ҚАМҚОРЛЫҚ)
+         ----------------------------------------------------------------------- -->
+    <section id="parents" class="py-20 px-4 md:px-8 relative">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="rounded-3xl glass-dostyk border-2 border-gold-400/60 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+          
+          <div class="text-center max-w-3xl mx-auto space-y-3 mb-10">
+            <span class="px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs sm:text-sm font-bold tracking-widest uppercase inline-block">
+              Перзенттік парыз
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+              Ата-аналар мен қарт кісілерге <br /><span class="text-gold-gradient">ерекше қамқорлық</span>
+            </h2>
+            <p class="text-slate-100 text-base sm:text-lg font-medium">
+              Ата-анаңызды қажылыққа апару — ең сауапты амал. Біз олардың жайлылығы, денсаулығы және шаршамауы үшін барлық жағдайды жасаймыз.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+            <!-- 1. Close Hotels -->
+            <div class="p-5 rounded-2xl bg-emerald-950/70 border border-gold-400/30 text-center space-y-3 hover:border-gold-400 transition-all shadow-lg">
+              <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+                <i data-lucide="hotel" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-white text-base font-serif">Харамға ең жақын қонақүйлер</h4>
+              <p class="text-xs text-slate-200 leading-relaxed font-normal">3-5 минуттық қашықтық. Қариялар шаршамай, әрбір намазға мешітке емін-еркін қатынай алады.</p>
+            </div>
+
+            <!-- 2. Wheelchair & Assistance -->
+            <div class="p-5 rounded-2xl bg-emerald-950/70 border border-gold-400/30 text-center space-y-3 hover:border-gold-400 transition-all shadow-lg">
+              <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+                <i data-lucide="accessibility" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-white text-base font-serif">Коляска және жеке көмекші</h4>
+              <p class="text-xs text-slate-200 leading-relaxed font-normal">Тәуап ету және Сағи амалдары кезінде арбамен алып жүретін арнайы сенімді көмекші ұйымдастырылады.</p>
+            </div>
+
+            <!-- 3. Medical & Spiritual Supervision -->
+            <div class="p-5 rounded-2xl bg-emerald-950/70 border border-gold-400/30 text-center space-y-3 hover:border-gold-400 transition-all shadow-lg">
+              <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+                <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-white text-base font-serif">24/7 Дәрігерлік және ұстаздық бақылау</h4>
+              <p class="text-xs text-slate-200 leading-relaxed font-normal">Қан қысымын, денсаулық жағдайын үнемі қадағалау және дер кезінде дәрігерлік көмек көрсету кепілдігі.</p>
+            </div>
+
+            <!-- 4. Kazakh & Halal Soft Hot Meals -->
+            <div class="p-5 rounded-2xl bg-emerald-950/70 border border-gold-400/30 text-center space-y-3 hover:border-gold-400 transition-all shadow-lg">
+              <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400 mx-auto shadow-md">
+                <i data-lucide="soup" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-white text-base font-serif">Қазақы таза, жұмсақ ыстық ас</h4>
+              <p class="text-xs text-slate-200 leading-relaxed font-normal">Қариялардың асқазанына қолайлы табиғи сорпалар, ет тағамдары және дәруменді швед үстелі.</p>
+            </div>
+          </div>
+
+          <!-- Emotional Reassurance Quote & CTA -->
+          <div class="p-6 rounded-2xl bg-black/50 border border-gold-400/35 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div class="space-y-1 text-center md:text-left">
+              <div class="text-gold-300 font-serif text-lg sm:text-xl font-bold italic">
+                «Ата-анаңызды бізге сеніп тапсырыңыз — біз оларға өз ата-анамыздай қамқорлық жасаймыз»
+              </div>
+              <div class="text-xs text-slate-300 font-medium">
+                Сапардың барлық құжаттары мен билеттерін, тіркеу мен трансферді толық өзіміз реттеп береміз.
+              </div>
+            </div>
+
+            <button onclick="openConsultationModal('Ата-аналарға тур', 'Ата-анамды Ұмраға жіберу бойынша ерекше жағдайлар мен бағаны білу')" class="shimmer-btn shrink-0 px-7 py-4 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-gold-500/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+              <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+              <span>Ата-анаңызды сапарға жаздыру</span>
+            </button>
           </div>
 
         </div>
@@ -1490,42 +1971,70 @@
           
           <!-- Left: Information & Controls -->
           <div class="lg:col-span-5 space-y-4">
-            <span class="px-4 py-1.5 rounded-full glass-gold text-gold-300 text-xs sm:text-sm font-bold uppercase tracking-wider inline-flex items-center gap-2">
-              <i data-lucide="video" class="w-4 h-4 text-gold-400"></i>
-              Қасиетті Мекке & Қажылық видеосы
+            <span class="px-4 py-1.5 rounded-full bg-red-500/20 border border-red-400/40 text-red-300 text-xs sm:text-sm font-bold uppercase tracking-wider inline-flex items-center gap-2">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+              Тікелей трансляция • Live 24/7
             </span>
             <h3 class="font-serif text-2xl sm:text-4xl font-extrabold text-white leading-snug">
               Қасиетті Қағба <br class="hidden sm:inline" />
-              <span class="text-gold-gradient">Тауаф & Зиярат сәті</span>
+              <span class="text-gold-gradient">Тікелей эфир (Live)</span>
             </h3>
             <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-              Әрбір мұсылманның жүрегіне тыныштық сыйлайтын қасиетті мекен. Farab Tour қажыларының осы ұлық сәттердегі рухани тебіренісі мен жүрек дұғасы.
+              Мекке әл-Мукаррамадан тікелей 24/7 онлайн көрсетілім. Қасиетті мекендегі тәуап ету сәттері мен рухани тыныштықты үзіліссіз, паузасыз тамашалаңыз.
             </p>
             <div class="flex flex-wrap items-center gap-3.5 pt-2">
-              <button id="footer-vid-playbtn" onclick="toggleFooterVideo()" class="shimmer-btn px-6 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-gold-500/20 hover:scale-105 active:scale-95 transition-all">
-                <i id="footer-vid-playicon" data-lucide="play" class="w-4 h-4 fill-current"></i>
-                <span id="footer-vid-playtext">Ойнату</span>
-              </button>
-              <button id="footer-vid-mutebtn" onclick="toggleFooterMute()" class="px-5 py-3 rounded-xl bg-emerald-900/60 border border-gold-400/30 text-gold-300 hover:text-white hover:border-gold-400 font-bold text-xs sm:text-sm flex items-center gap-2 transition-all">
-                <i id="footer-vid-muteicon" data-lucide="volume-x" class="w-4 h-4"></i>
+              <button id="footer-vid-mutebtn" onclick="toggleYtLiveMute()" class="shimmer-btn px-6 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-gold-500/20 hover:scale-105 active:scale-95 transition-all">
+                <i id="footer-vid-muteicon" data-lucide="volume-2" class="w-4 h-4 fill-current"></i>
                 <span id="footer-vid-mutetext">Дыбысын қосу</span>
               </button>
               <button onclick="openFooterFullscreen()" class="px-4 py-3 rounded-xl bg-emerald-900/60 border border-gold-400/30 text-gold-300 hover:text-white hover:border-gold-400 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-all" title="Толық экран">
                 <i data-lucide="maximize" class="w-4 h-4"></i>
                 <span class="hidden sm:inline">Толық экран</span>
               </button>
+              <a href="https://www.youtube.com/live/NRyt33v_vr8?si=0awuxSBbe9KwqiKD" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-xl bg-red-950/70 border border-red-500/40 text-red-200 hover:text-white hover:bg-red-900/90 text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all shadow-md" title="YouTube қосымшасынан ашу">
+                <i data-lucide="youtube" class="w-4 h-4 text-red-400"></i>
+                <span>YouTube Live</span>
+              </a>
             </div>
           </div>
 
-          <!-- Right: 16:9 Video Frame -->
+          <!-- Right: 16:9 Live Video Frame -->
           <div class="lg:col-span-7">
             <div class="relative rounded-2xl overflow-hidden border-2 border-gold-400/40 shadow-2xl bg-black aspect-video group">
-              <video id="footer-kaaba-vid" class="w-full h-full object-cover" muted loop playsinline preload="metadata">
-                <source src="video-kaaba-footer.mp4" type="video/mp4" />
-              </video>
-              <!-- Video badge -->
-              <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-gold-400/30 text-xs font-semibold text-gold-300 flex items-center gap-2 pointer-events-none">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <iframe
+                id="footer-live-frame"
+                class="w-full h-full border-0 absolute inset-0"
+                src="https://www.youtube.com/embed/NRyt33v_vr8?autoplay=1&mute=1&playsinline=1&controls=1&rel=0&modestbranding=1&enablejsapi=1"
+                title="Мекке әл-Мукаррама Тікелей Эфир (Kaaba Live)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="eager"
+              ></iframe>
+
+              <!-- Floating sound toggle badge on top-left of video -->
+              <button
+                id="yt-live-sound-overlay"
+                onclick="toggleYtLiveMute()"
+                class="absolute top-3 left-3 z-20 flex items-center gap-2 bg-emerald-950/90 border border-gold-400/60 hover:bg-gold-500 hover:text-emerald-950 text-gold-300 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-2xl transition-all duration-300 backdrop-blur-md active:scale-95 group"
+                title="Дыбысты қосу немесе өшіру"
+              >
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
+                </span>
+                <i id="yt-overlay-sound-icon" data-lucide="volume-x" class="w-4 h-4 text-gold-400 group-hover:text-emerald-950"></i>
+                <span id="yt-overlay-sound-text">Дауысын қосу (Live)</span>
+              </button>
+
+              <!-- Live Video badge -->
+              <div class="absolute bottom-3 right-3 bg-black/85 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-gold-400/40 text-xs font-bold text-gold-300 flex items-center gap-2 pointer-events-none z-10 shadow-xl">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                </span>
                 <span>Мекке әл-Мукаррама • Live</span>
               </div>
             </div>
@@ -1559,7 +2068,7 @@
           <h4 class="text-base font-bold uppercase tracking-wider text-gold-400 font-serif">Бөлімдер</h4>
           <ul class="space-y-2.5 text-sm text-slate-200 font-medium">
             <li><a href="#about" class="hover:text-gold-300 transition-colors">Біз туралы</a></li>
-            <li><a href="#tours" class="hover:text-gold-300 transition-colors">Ұмра турлары 2026</a></li>
+            <li><a href="#tours" class="hover:text-gold-300 transition-colors">Ұмра турлары</a></li>
             <li><a href="#why-us" class="hover:text-gold-300 transition-colors">Неліктен Farab Tour?</a></li>
             <li><a href="#timeline" class="hover:text-gold-300 transition-colors">7 Қадамды сапар картасы</a></li>
             <li><a href="#founder" class="hover:text-gold-300 transition-colors">Жетекші Әлфараби Сағымбекұлы</a></li>
@@ -1578,10 +2087,6 @@
             <li class="flex items-center gap-3">
               <i data-lucide="phone" class="w-5 h-5 text-gold-400 shrink-0"></i>
               <a href="tel:+77474983298" class="hover:text-gold-300 font-bold text-white">8 (747) 498-32-98</a>
-            </li>
-            <li class="flex items-center gap-3">
-              <i data-lucide="mail" class="w-5 h-5 text-gold-400 shrink-0"></i>
-              <span>info@farabtour.kz</span>
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="clock" class="w-5 h-5 text-gold-400 shrink-0"></i>
@@ -1615,10 +2120,6 @@
       <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gold-400/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-300 font-medium">
         <div>© 2026 Farab Tour. Барлық құқықтар қорғалған.</div>
         <div class="flex items-center gap-6">
-          <a href="/api/leads/download" class="text-gold-300 hover:text-gold-200 flex items-center gap-2 transition-colors font-bold" title="Жиналған барлық өтінімдерді Excel түрінде жүктеп алу">
-            <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-400"></i>
-            <span>Excel базаны жүктеу (leads.xlsx)</span>
-          </a>
           <a href="#" class="hover:text-gold-300">Құпиялылық саясаты</a>
           <a href="#" class="hover:text-gold-300">Пайдаланушы келісімі</a>
         </div>
@@ -1980,68 +2481,125 @@
     requestAnimationFrame(scrollTick);
 
     // =========================================================================
-    // FOOTER KAABA VIDEO CONTROLS & AUTOPLAY OBSERVER
+    // FOOTER KAABA YOUTUBE LIVE CONTROLS & CONTINUOUS LIVE AUDIO
     // =========================================================================
-    const footerVid = document.getElementById('footer-kaaba-vid');
-    const footerPlayBtn = document.getElementById('footer-vid-playbtn');
-    const footerPlayText = document.getElementById('footer-vid-playtext');
-    const footerPlayIcon = document.getElementById('footer-vid-playicon');
-    const footerMuteBtn = document.getElementById('footer-vid-mutebtn');
-    const footerMuteText = document.getElementById('footer-vid-mutetext');
-    const footerMuteIcon = document.getElementById('footer-vid-muteicon');
+    let ytLivePlayer = null;
+    let ytLiveMuted = true;
 
-    function toggleFooterVideo() {
-      if (!footerVid) return;
-      if (footerVid.paused) {
-        footerVid.play().then(() => {
-          if (footerPlayText) footerPlayText.textContent = 'Кідірту';
-          if (footerPlayIcon) footerPlayIcon.setAttribute('data-lucide', 'pause');
-          lucide.createIcons();
-        }).catch(() => {});
-      } else {
-        footerVid.pause();
-        if (footerPlayText) footerPlayText.textContent = 'Ойнату';
-        if (footerPlayIcon) footerPlayIcon.setAttribute('data-lucide', 'play');
-        lucide.createIcons();
+    // Official YouTube Iframe Player API hook
+    window.onYouTubeIframeAPIReady = function() {
+      try {
+        ytLivePlayer = new YT.Player('footer-live-frame', {
+          events: {
+            onReady: function(e) {
+              try {
+                e.target.playVideo();
+                if (!ytLiveMuted) {
+                  e.target.unMute();
+                  e.target.setVolume(100);
+                }
+              } catch (err) {}
+            }
+          }
+        });
+      } catch (err) {
+        console.warn('YouTube API init notice:', err);
+      }
+    };
+
+    function sendYtCommand(func, args) {
+      const iframe = document.getElementById('footer-live-frame');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: func,
+          args: args || []
+        }), '*');
       }
     }
 
-    function toggleFooterMute() {
-      if (!footerVid) return;
-      footerVid.muted = !footerVid.muted;
-      if (footerMuteText) footerMuteText.textContent = footerVid.muted ? 'Дыбысын қосу' : 'Дыбысын өшіру';
-      if (footerMuteIcon) footerMuteIcon.setAttribute('data-lucide', footerVid.muted ? 'volume-x' : 'volume-2');
-      lucide.createIcons();
+    function setLiveSoundState(unmuted) {
+      ytLiveMuted = !unmuted;
+      if (unmuted) {
+        // Unmute via YouTube API object
+        if (ytLivePlayer && typeof ytLivePlayer.unMute === 'function') {
+          try {
+            ytLivePlayer.unMute();
+            ytLivePlayer.setVolume(100);
+            ytLivePlayer.playVideo();
+          } catch(e) {}
+        }
+        // Direct postMessage fallback
+        sendYtCommand('unMute');
+        sendYtCommand('setVolume', [100]);
+        sendYtCommand('playVideo');
+
+        // Update main button
+        const muteText = document.getElementById('footer-vid-mutetext');
+        const muteIcon = document.getElementById('footer-vid-muteicon');
+        if (muteText) muteText.textContent = 'Дыбысты өшіру';
+        if (muteIcon) muteIcon.setAttribute('data-lucide', 'volume-x');
+
+        // Update video overlay badge
+        const overlayText = document.getElementById('yt-overlay-sound-text');
+        const overlayIcon = document.getElementById('yt-overlay-sound-icon');
+        if (overlayText) overlayText.textContent = '🔊 Дыбыс қосулы';
+        if (overlayIcon) overlayIcon.setAttribute('data-lucide', 'volume-2');
+      } else {
+        if (ytLivePlayer && typeof ytLivePlayer.mute === 'function') {
+          try {
+            ytLivePlayer.mute();
+          } catch(e) {}
+        }
+        sendYtCommand('mute');
+
+        const muteText = document.getElementById('footer-vid-mutetext');
+        const muteIcon = document.getElementById('footer-vid-muteicon');
+        if (muteText) muteText.textContent = 'Дыбысын қосу';
+        if (muteIcon) muteIcon.setAttribute('data-lucide', 'volume-2');
+
+        const overlayText = document.getElementById('yt-overlay-sound-text');
+        const overlayIcon = document.getElementById('yt-overlay-sound-icon');
+        if (overlayText) overlayText.textContent = 'Дауысын қосу (Live)';
+        if (overlayIcon) overlayIcon.setAttribute('data-lucide', 'volume-x');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function toggleYtLiveMute() {
+      setLiveSoundState(ytLiveMuted);
     }
 
     function openFooterFullscreen() {
-      if (!footerVid) return;
-      if (footerVid.requestFullscreen) {
-        footerVid.requestFullscreen();
-      } else if (footerVid.webkitRequestFullscreen) {
-        footerVid.webkitRequestFullscreen();
+      const iframe = document.getElementById('footer-live-frame');
+      if (!iframe) return;
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
       }
     }
 
-    // Autoplay muted when scrolled into view
-    if (footerVid) {
-      const footerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            footerVid.play().catch(() => {});
-            if (footerPlayText) footerPlayText.textContent = 'Кідірту';
-            if (footerPlayIcon) footerPlayIcon.setAttribute('data-lucide', 'pause');
-            lucide.createIcons();
-          } else {
-            footerVid.pause();
-            if (footerPlayText) footerPlayText.textContent = 'Ойнату';
-            if (footerPlayIcon) footerPlayIcon.setAttribute('data-lucide', 'play');
-            lucide.createIcons();
-          }
-        });
-      }, { threshold: 0.25 });
-      footerObserver.observe(footerVid);
+    // Auto-unmute on first user touch/click anywhere on page
+    // (Bypasses browser autoplay restrictions seamlessly)
+    function autoEnableLiveSound() {
+      if (ytLiveMuted) {
+        setLiveSoundState(true);
+      }
+      window.removeEventListener('click', autoEnableLiveSound);
+      window.removeEventListener('touchstart', autoEnableLiveSound);
+      window.removeEventListener('keydown', autoEnableLiveSound);
     }
+    window.addEventListener('click', autoEnableLiveSound, { once: true });
+    window.addEventListener('touchstart', autoEnableLiveSound, { once: true });
+    window.addEventListener('keydown', autoEnableLiveSound, { once: true });
+
+    // Ensure playback starts on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        sendYtCommand('playVideo');
+      }, 600);
+    });
 
 
     // Animate stats counter numbers when visible
@@ -2530,7 +3088,7 @@
       }
 
       // 4. Notification feedback
-      showToast('✓ Өтінім Excel базасына сақталды!', 'WhatsApp диалогы ашылуда...');
+      showToast('✓ Өтінім қабылданды!', 'WhatsApp диалогы ашылуда...');
 
       // 5. Cleanup
       if (formToReset) {
@@ -2599,6 +3157,56 @@
     function bookDostykWhatsApp(note = '10.10.2026 – 21.10.2026 аралығындағы Dostyk Package турын брондау') {
       openConsultationModal('Dostyk Package брондау', note);
     }
+
+
+
+    // Live Tour Departure Countdown Timer
+    function initTourCountdown() {
+      // Target departure: 10 October 2026, 09:00:00 (or dynamic 25 days)
+      let targetDate = new Date('2026-10-10T09:00:00');
+      const now = new Date();
+      if (now >= targetDate) {
+        targetDate = new Date(now.getTime() + (25 * 24 * 60 * 60 * 1000));
+      }
+
+      function updateCountdown() {
+        const current = new Date();
+        const diff = targetDate - current;
+
+        const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+
+        if (diff <= 0) {
+          ['countdown-days', 'countdown-hours', 'countdown-minutes', 'countdown-seconds'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = '00';
+          });
+          const heroCd = document.getElementById('hero-countdown');
+          if (heroCd) heroCd.textContent = '00 күн 00:00:00';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        const dEl = document.getElementById('countdown-days');
+        const hEl = document.getElementById('countdown-hours');
+        const mEl = document.getElementById('countdown-minutes');
+        const sEl = document.getElementById('countdown-seconds');
+        const heroCd = document.getElementById('hero-countdown');
+
+        if (dEl) dEl.textContent = pad(days);
+        if (hEl) hEl.textContent = pad(hours);
+        if (mEl) mEl.textContent = pad(minutes);
+        if (sEl) sEl.textContent = pad(seconds);
+        if (heroCd) heroCd.textContent = `${days} күн ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+    initTourCountdown();
 
     // Mobile Menu Toggle with dynamic icon update
     function toggleMobileMenu() {
