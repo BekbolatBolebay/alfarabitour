@@ -393,7 +393,7 @@
          ----------------------------------------------------------------------- -->
     <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-6 pt-28 pb-16 relative">
       
-      <div id="hero-content" class="w-full flex flex-col items-center transition-opacity duration-300">
+      <div id="hero-content" class="w-full flex flex-col items-center">
         <!-- Bismillah Arabic Calligraphy Badge -->
         <div class="drift-1 mb-6 px-7 py-3 rounded-full bg-[#021811]/30 backdrop-blur-lg border border-gold-400/50 inline-flex items-center gap-3 shadow-2xl">
           <span class="text-gold-400 font-serif text-base sm:text-lg tracking-widest font-semibold">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
@@ -2443,8 +2443,13 @@
     });
 
     function scrollTick() {
-      // Smooth lerp toward real scroll
-      curP = lerp(curP, getScrollP(), 0.09);
+      const realP = getScrollP();
+      // Snap instantly when at/near top so there is zero sluggishness or delay returning to the first screen
+      if (realP <= 0.002) {
+        curP = 0;
+      } else {
+        curP = lerp(curP, realP, 0.18);
+      }
       const p = curP;
 
       // Determine active zone
@@ -2458,13 +2463,11 @@
       const zoneP = clamp((p - z.s) / (z.e - z.s), 0, 1);
       scrubVideo(z.v, zoneP);
 
-      // ── Content fades ──
-
-      // Hero: fades out 0→10% as user scrolls into content
+      // ── Content stays 100% visible & immediately responsive ──
+      // Hero content remains completely visible without artificial opacity fade delays
       if (heroContent) {
-        const a = Math.max(0, 1 - p / 0.10);
-        heroContent.style.opacity = `${a}`;
-        heroContent.style.pointerEvents = a < 0.1 ? 'none' : 'auto';
+        heroContent.style.opacity = '1';
+        heroContent.style.pointerEvents = 'auto';
       }
 
       // Cloud fog overlay — gentle atmospheric haze, never washes out text
